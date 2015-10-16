@@ -60,7 +60,7 @@ public class adminMenuWindow extends JDialog implements ActionListener{
 		pan.add(this.menuPrincipal);
 		this.add(pan);
 	}
-	@Override
+
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource()==this.ajouterAdmin) {
 			this.choice=1;

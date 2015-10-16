@@ -9,10 +9,8 @@ public class Cours {
 
 
 	/**
-	 * Constructeur de Cours.
+	 * Crée le cours courant.
 	 * 
-	 * @param typeCours
-	 * @param libelle
 	 */
 	public Cours(String typeCours, String libelle) {
 		this.typeCours = typeCours;
@@ -20,18 +18,16 @@ public class Cours {
 	}
 
 	/**
-	 * Getter du type de cours.
-	 * 
-	 * @return typeCours
+	 * Retourne le type du cours courant.
+	 *
 	 */
 	public String getTypeCours() {
 		return typeCours;
 	}
 
 	/**
-	 * Getter du Libelle de cours.
-	 * 
-	 * @return libelle
+	 * Retourne le libelle du cours courant.
+	 *
 	 */
 	public String getLibelle() {
 		return libelle;
