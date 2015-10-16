@@ -8,11 +8,7 @@ public class Date {
 	private int annee;
 
 	/**
-	 * Constructeur de Date.
-	 * 
-	 * @param jour
-	 * @param mois
-	 * @param annee
+	 * Crée la date du cours courant
 	 */
 	public Date(int jour, int mois, int annee) {
 		this.jour = jour;
@@ -21,28 +17,22 @@ public class Date {
 	}
 
 	/**
-	 * Getter du jour.
-	 * 
-	 * @return jour
-	 */
+	 * Retourne le jour du cours courant
+	 * 	 */
 	public int getJour() {
 		return jour;
 	}
 
 	/**
-	 * Getter du mois.
-	 * 
-	 * @return mois
-	 */
+	 * Retourne le mois du cours courant
+	 * 	 */
 	public int getMois() {
 		return mois;
 	}
 
 	/**
-	 * Getter de l'annee.
-	 * 
-	 * @return annee
-	 */
+	 * Retourne l'année du cours courant
+	 * */
 	public int getAnnee() {
 		return annee;
 	}

@@ -22,61 +22,41 @@ public class Gestionnaire {
 	private List<Administrateur> listAdministrateurs;
 
 	/**
-	 * Constructeur de Gestionnaire.
-	 * 
-	 * @param monIHM
-	 * @param fichierEtudiants
-	 * @param fichierProfesseurs
-	 * @param fichierAdministrateurs
-	 */
-	public Gestionnaire(IHM monIHM, File fichierEtudiants,
-			File fichierProfesseurs, File fichierAdministrateurs) {
+	 * Création du module de gestion de l'application
+	 * 	 */
+	public Gestionnaire(IHM monIHM, Fichiers fichiers) {
+		
 		this.monIHM = monIHM;
 		this.fileManagerAdmin = new ListePersonnes(fichierAdministrateurs);
 		this.fileManagerEtudiant = new ListePersonnes(fichierEtudiants);
 		this.fileManagerProf = new ListePersonnes(fichierProfesseurs);
+		
 		try {
 			this.listAdministrateurs=this.fileManagerAdmin.getListAdministrateurs();
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
-		try {
 			this.listEtudiants=this.fileManagerEtudiant.getListEtudiants();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		try {
 			this.listProfesseurs=this.fileManagerProf.getListProfesseurs();
+			
 		} catch (IOException e) {
 			e.printStackTrace();
+			System.out.println("Probleme lecture de fichier(s)");
 		}
 
 	}
 
 	/**
-	 * Identifie un Admin.
-	 * 
-	 * @return boolean
-	 */
+	 * Vérifie validité identifiants Administrateur  
+	 * 	 */
 	public Administrateur identificationAdministrateur() {
 		String login = this.monIHM.saisieLogin();
 		if (login != null) {
 			String password = this.monIHM.saisiePassword();
-			if (password !=null){
-				return this.rechercheAdministrateur(login, password);
-			}
+			if (password !=null) return this.rechercheAdministrateur(login, password);
+			
 		}
 		return null;
 		
 	}
 
-	/**
-	 * Recherche un administrateur dans la liste.
-	 * 
-	 * @param login
-	 * @param password
-	 * @return currentAdministrateur
-	 */
 	public Administrateur rechercheAdministrateur(String login, String password) {
 		Iterator<Administrateur> iterator = this.listAdministrateurs.iterator();
 		while (iterator.hasNext()) {
@@ -94,8 +74,7 @@ public class Gestionnaire {
 	
 	/**
 	 * Obtnenir la liste d'Ã©tudiants.
-	 * 
-	 * @return listEtudiants
+	 *
 	 */
 	public List<Etudiant> getListEtudiants() {
 		return this.listEtudiants;
@@ -103,8 +82,7 @@ public class Gestionnaire {
 
 	/**
 	 * Obtnenir liste d'administrateurs.
-	 * 
-	 * @return listAdministrateurs
+	 *
 	 */
 	public List<Professeur> getListProfesseurs() {
 		return this.listProfesseurs;
@@ -113,18 +91,12 @@ public class Gestionnaire {
 	
 	/**
 	 * Obtnenir liste de professeurs.
-	 * 
-	 * @return listProfesseurs
+	 *
 	 */
 	public List<Administrateur> getListAdministrateurs() {
 		return this.listAdministrateurs;
 	}
 
-	/**
-	 * Identfie un Professeur.
-	 * 
-	 * @return boolean
-	 */
 	public Professeur identificationProfesseur() {
 		String login = this.monIHM.saisieLogin();
 		if (login != null) {

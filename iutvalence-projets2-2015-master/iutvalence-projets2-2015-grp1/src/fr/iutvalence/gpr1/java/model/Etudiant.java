@@ -16,15 +16,8 @@ public class Etudiant extends Personne {
 	private int nbrAbsence;
 
 	/**
-	 * Constructeur de Etudiant.
+	 * Crée un étudiant
 	 * 
-	 * @param nom
-	 * @param prenom
-	 * @param gprTP
-	 * @param grpTD
-	 * @param numEtudiant
-	 * @param login
-	 * @param password
 	 */
 	public Etudiant(String nom, String prenom, String gprTP, int grpTD, int numEtudiant,
 			String login, String password) {
@@ -37,61 +30,51 @@ public class Etudiant extends Personne {
 	}
 
 	/**
-	 * Getter du groupe de TD.
+	 * Retourne le groupe de TD de l'étudiant
 	 * 
-	 * @return grpTd
 	 */
 	public int getGrpTd() {
 		return grpTd;
 	}
 
 	/**
-	 * Getter du groupe de TP.
-	 * 
-	 * @return grpTp
+	 * Retourne le groupe de TP de l'étudiant
 	 */
 	public String getgprTP() {
 		return this.gprTP;
 	}
 
 	/**
-	 * Getter du numÃ©ro d'etudiant.
-	 * 
-	 * @return numEtudiant
-	 */
+	 * Retourne le groupe de numéro de l'étudiant
+	 *  */
 	public int getnumEtudiant() {
 		return this.numEtudiant;
 	}
 
 	/**
-	 * Getter du nombre d'absences.
-	 * 
-	 * @return nbrAbsence
-	 */
+	 * Retourne le nombre d'absence de l'étudiant
+	 *  */
 	public int getNbrAbsence() {
 		return this.nbrAbsence;
 	}
 
 	/**
-	 * Getter de l'absence.
-	 * 
-	 * @return absence
-	 */
+	 * Dit si l'étudiant a été absent au cours courant
+	 * */
 	public boolean getAbsence() {
 		return this.absence;
 	}
 
 	/**
-	 * Setter de l'absence.
+	 * Définit l'étudiant comme absent au cours courant
 	 * 
-	 * @param absence
 	 */
 	public void setAbsence(boolean absence) {
 		this.absence = absence;
 	}
 
 	/**
-	 * Ajoute une absence.
+	 * Ajoute une absence au nombre d'absence total de l'étudiant.
 	 */
 	public void addAbsence() {
 		this.nbrAbsence = this.nbrAbsence++;

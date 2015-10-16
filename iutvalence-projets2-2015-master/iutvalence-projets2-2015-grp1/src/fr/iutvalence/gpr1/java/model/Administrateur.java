@@ -4,7 +4,7 @@ package fr.iutvalence.gpr1.java.model;
 public class Administrateur extends Personne {
 
 	/**
-	 * Mise en cache d'un Administrateur.
+	 * Création d'un Administrateur.
 	 * 
 	 */	
 	public Administrateur(String nom, String prenom, String login,
